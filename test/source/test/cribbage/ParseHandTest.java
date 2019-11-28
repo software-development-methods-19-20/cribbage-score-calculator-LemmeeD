@@ -101,4 +101,19 @@ public class ParseHandTest {
         Hand hand = HandParser.parseHand("JC5D5H9S6S"); //
         assertThat(Scorer.fifteenTwos(hand), is(6));
     }
+    @Test
+    void scoreFlushAnd15Twos1() {
+        Hand hand = HandParser.parseHand("7D8DACKD2D");
+        assertThat(Scorer.ScoreAll(hand), is(2));
+    }
+    @Test
+    void scoreFlushAnd15Twos2() {
+        Hand hand = HandParser.parseHand("KD5D8D7D3D");
+        assertThat(Scorer.ScoreAll(hand), is(4+4));
+    }
+    @Test
+    void scoreFlushAnd15Twos3() {
+        Hand hand = HandParser.parseHand("6S5S5S9SJS");
+        assertThat(Scorer.ScoreAll(hand), is(5+6));
+    }
 }
