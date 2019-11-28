@@ -116,4 +116,34 @@ public class ParseHandTest {
         Hand hand = HandParser.parseHand("6S5S5S9SJS");
         assertThat(Scorer.ScoreAll(hand), is(5+6));
     }
+    @Test
+    void scoreRun1() {
+        Hand hand = HandParser.parseHand("6S4S5S6SJS");
+        assertThat(Scorer.Runs(hand), is(3));
+    }
+    @Test
+    void scoreRun2() {
+        Hand hand = HandParser.parseHand("6S4S5SAC2H");
+        assertThat(Scorer.Runs(hand), is(0));
+    }
+    @Test
+    void scoreRun3() {
+        Hand hand = HandParser.parseHand("KCAS3D4S5C");
+        assertThat(Scorer.Runs(hand), is(3));
+    }
+    @Test
+    void scoreFlushAnd15TwosAndRun1() {
+        Hand hand = HandParser.parseHand("7D8DAC2D3D");
+        assertThat(Scorer.ScoreAll(hand), is(0+2+3));
+    }
+    @Test
+    void scoreFlushAnd15TwosAndRun2() {
+        Hand hand = HandParser.parseHand("7D5D8D3DJD");
+        assertThat(Scorer.ScoreAll(hand), is(5+4+0));
+    }
+    @Test
+    void scoreFlushAnd15TwosAndRun3() {
+        Hand hand = HandParser.parseHand("JH2H3H4H5C");
+        assertThat(Scorer.ScoreAll(hand), is(4+2+4));
+    }
 }

@@ -16,7 +16,7 @@ public class Card {
         return rank;
     }
 
-    public int rankNum() {              //J, Q, K valgono tutti 10 ( per fifteenTwos() )
+    public int rank15TwosNum() {              //J, Q, K valgono tutti 10 ( per fifteenTwos() )
         if (this.rank().equalsIgnoreCase("A")) return 1;
         else if (this.rank().equalsIgnoreCase("2")) return 2;
         else if (this.rank().equalsIgnoreCase("3")) return 3;
@@ -27,6 +27,21 @@ public class Card {
         else if (this.rank().equalsIgnoreCase("8")) return 8;
         else if (this.rank().equalsIgnoreCase("9")) return 9;
         else return 10;
+    }
+
+    public int rankNum() {
+        if (this.rank().equalsIgnoreCase("A")) return 1;
+        else if (this.rank().equalsIgnoreCase("2")) return 2;
+        else if (this.rank().equalsIgnoreCase("3")) return 3;
+        else if (this.rank().equalsIgnoreCase("4")) return 4;
+        else if (this.rank().equalsIgnoreCase("5")) return 5;
+        else if (this.rank().equalsIgnoreCase("6")) return 6;
+        else if (this.rank().equalsIgnoreCase("7")) return 7;
+        else if (this.rank().equalsIgnoreCase("8")) return 8;
+        else if (this.rank().equalsIgnoreCase("9")) return 9;
+        else if (this.rank().equalsIgnoreCase("J")) return 10;
+        else if (this.rank().equalsIgnoreCase("Q")) return 11;
+        else return 12;
     }
 
     public Suite suite() {
