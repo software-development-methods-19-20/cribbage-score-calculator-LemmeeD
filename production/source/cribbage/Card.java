@@ -16,4 +16,8 @@ public class Card {
     public Suite suite() {
         return suite;
     }
+
+    public String toString() {
+        return this.rank()+this.suite().to2String();
+    }
 }

@@ -14,13 +14,11 @@ public enum Suite {
         else return null;
     }
 
-    /*@Override
-    public String toString() {
-        switch (this) {
-            case HEART: return "HEART"; break;
-            case SPADES: return "SPADES"; break;
-            case DIAMONDS: return "DIAMONDS"; break;
-            case CLUBS: return "CLUBS"; break;
-        }
-    }*/
+    public String to2String() {
+        if (this.toString() == "SPADES") return "S";
+        else if (this.toString() == "CLUBS") return "C";
+        else if (this.toString() == "DIAMONDS") return "D";
+        else if (this.toString() == "HEART") return "H";
+        else return "";
+    }
 }
